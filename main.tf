@@ -22,7 +22,6 @@ resource "aws_instance" "abed_IaC_server" {
                     cd /home/ubuntu
                     echo "<h1>Terraform OLA MUNDO</h1>" > index.html
                     nohup busybox -httpd -f -p 8080 &
-
                  EOF
   tags = {
     Name = "teste com index.html"
