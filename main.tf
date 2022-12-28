@@ -16,8 +16,8 @@ provider "aws" {
 resource "aws_instance" "abed_IaC_server" {
   ami           = "ami-0530ca8899fac469f"
   instance_type = "t2.micro"
-
+  key_name = "iac-abed"
   tags = {
-    Name = "primeira instancia"
+    Name = "teste aws"
   }
 }
