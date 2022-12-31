@@ -17,7 +17,13 @@ resource "aws_instance" "abed_IaC_server" {
   ami           = "ami-0530ca8899fac469f"
   instance_type = "t2.micro"
   key_name = "iac-abed"
+  user_data = <<-EOF
+    #!/bin/bash
+    cd /home/ubuntu
+    echo "<h1>Adicionei com terraform</h1>" > index.html
+    nohup busybox httpd -f -p 8080 &
+  EOF
   tags = {
-    Name = "teste com index.html"
+    Name = "teste inserindo HTML"
   }
 }
